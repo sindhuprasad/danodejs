@@ -1,0 +1,10 @@
+{
+"name": "da-nodejs",
+"version": "1.0.0",
+"dependencies":
+{
+"express": "~4.0.0",
+"ejs": "~1.0.0",
+"mongodb": ">= 0.9.6-7"
+}
+}
