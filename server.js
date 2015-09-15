@@ -13,13 +13,13 @@ var Twitter = require('node-tweet-stream')
   });
 
 t.on('tweet', function (tweet) {
-  console.log('tweet received', tweet)
+  //console.log('tweet received', tweet)
   MongoClient.connect('mongodb://localhost:27017/dairyanalytics', function(err, db) {
 
   	db.collection('tweets').insert(tweet, function(err, inserted) {
         if(err) throw err;
 
-        console.dir("Successfully inserted: " + JSON.stringify(inserted));
+        console.dir("Successfully inserted" );
 
         //return db.close();
     });
@@ -44,11 +44,12 @@ t.on('error', function (err) {
   console.log('Oh no')
 })
  
-t.track('dairy')
-t.track('cattle')
+t.track('dairy industry')
+t.track('cattle farm')
  
 // 5 minutes later
-t.track('dairy industry')
+t.track('dairy farm')
+t.track('cattle industry')
  
 // 10 minutes later
 //t.untrack('dairy farming')
